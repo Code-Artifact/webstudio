@@ -1,7 +1,7 @@
 import path, { resolve } from "node:path";
 import { defineConfig, type CorsOptions } from "vite";
 import { vitePlugin as remix } from "@remix-run/dev";
-import { vercelPreset } from "@vercel/remix/vite";
+
 import type { IncomingMessage } from "node:http";
 import pc from "picocolors";
 
@@ -35,7 +35,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [
       remix({
-        presets: [vercelPreset()],
+        presets: [],
         future: {
           v3_lazyRouteDiscovery: false,
           v3_relativeSplatPath: false,
