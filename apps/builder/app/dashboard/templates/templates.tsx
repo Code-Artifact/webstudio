@@ -7,6 +7,7 @@ import {
   rawTheme,
   theme,
 } from "@webstudio-is/design-system";
+import { t } from "~/shared/i18n/t";
 import type { DashboardProject } from "@webstudio-is/dashboard";
 import { Header, Main } from "../shared/layout";
 import { CreateProject } from "../projects/project-dialogs";
@@ -48,7 +49,7 @@ export const Templates = ({ projects, welcome = false }: ProjectsProps) => {
     <Main>
       <Header variant="main">
         <Text variant="brandSectionTitle" as="h2">
-          {welcome ? "What will you create?" : "Starter templates"}
+          {welcome ? t.dashboard.whatWillYouCreate : t.dashboard.starterTemplates}
         </Text>
         <Flex gap="2">
           <CreateProject />

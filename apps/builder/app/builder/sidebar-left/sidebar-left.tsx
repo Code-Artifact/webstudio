@@ -45,6 +45,7 @@ import { NavigatorPanel } from "~/builder/features/navigator";
 import { AssetsPanel } from "~/builder/features/assets";
 import { MarketplacePanel } from "~/builder/features/marketplace";
 import type { SidebarPanelName } from "./types";
+import { t } from "~/shared/i18n/t";
 
 const none = { Panel: () => null };
 
@@ -54,7 +55,7 @@ const HelpTabTrigger = () => {
     <HelpCenter onOpenChange={setHelpIsOpen}>
       <HelpCenter.Trigger asChild>
         <SidebarButton
-          label="Learn Webstudio or ask for help"
+          label={t.sidebar.learnOrHelp}
           data-state={helpIsOpen ? "active" : undefined}
         >
           <HelpIcon size={rawTheme.spacing[10]} />
@@ -106,7 +107,7 @@ const panels: PanelConfig[] = [
     name: "components",
     label: (
       <Text>
-        Components&nbsp;&nbsp;
+        {t.sidebar.components}&nbsp;&nbsp;
         <Kbd value={["A"]} color="moreSubtle" />
       </Text>
     ),
@@ -118,7 +119,7 @@ const panels: PanelConfig[] = [
   },
   {
     name: "pages",
-    label: "Pages",
+    label: t.sidebar.pages,
     Icon: PageIcon,
     Panel: PagesPanel,
   },
@@ -126,7 +127,7 @@ const panels: PanelConfig[] = [
     name: "navigator",
     label: (
       <Text>
-        Navigator&nbsp;&nbsp;
+        {t.sidebar.navigator}&nbsp;&nbsp;
         <Kbd value={["z"]} color="moreSubtle" />
       </Text>
     ),
@@ -135,13 +136,13 @@ const panels: PanelConfig[] = [
   },
   {
     name: "assets",
-    label: "Assets",
+    label: t.sidebar.assets,
     Icon: ImageIcon,
     Panel: AssetsPanel,
   },
   {
     name: "marketplace",
-    label: "Marketplace",
+    label: t.sidebar.marketplace,
     Icon: ExtensionIcon,
     Panel: MarketplacePanel,
     visibility: {
@@ -237,7 +238,7 @@ export const SidebarLeft = ({ publish }: SidebarLeftProps) => {
         <Flex
           grow
           direction="column"
-          css={{ borderRight: `1px solid ${theme.colors.borderMain}` }}
+          css={{ borderInlineEnd: `1px solid ${theme.colors.borderMain}` }}
         >
           <ExternalDragDropMonitor />
           <div ref={tabsWrapperRef} style={{ display: "contents" }}>

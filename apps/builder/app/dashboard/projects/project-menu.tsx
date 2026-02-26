@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { t } from "~/shared/i18n/t";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -33,7 +34,7 @@ export const ProjectMenu = ({ projectId, onOpenChange }: ProjectMenuProps) => {
     <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
       <DropdownMenuTrigger asChild>
         <IconButton
-          aria-label="Menu Button"
+          aria-label={t.dashboard.menuButton}
           tabIndex={-1}
           css={{ alignSelf: "center", position: "relative", zIndex: 1 }}
         >
@@ -42,25 +43,25 @@ export const ProjectMenu = ({ projectId, onOpenChange }: ProjectMenuProps) => {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" css={{ width: theme.spacing[24] }}>
         <DropdownMenuItem onSelect={handleDuplicateProject}>
-          Duplicate
+          {t.dashboard.duplicate}
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={() => onOpenChange("rename")}>
-          Rename
+          {t.common.rename}
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={() => onOpenChange("share")}>
-          Share
+          {t.dashboard.share}
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={() => onOpenChange("delete")}>
-          Delete
+          {t.common.delete}
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={() => onOpenChange("tags")}>
-          Tags
+          {t.dashboard.tags}
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={() => onOpenChange("settings")}>
-          Settings
+          {t.dashboard.settings}
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={handleOpenInSafeMode}>
-          Open in safe mode
+          {t.dashboard.openInSafeMode}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

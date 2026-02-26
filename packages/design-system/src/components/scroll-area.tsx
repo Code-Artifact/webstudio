@@ -40,7 +40,7 @@ const ScrollAreaScrollbar = styled(Scrollbar, {
           marginBottom: theme.spacing[4],
         },
         '&[data-orientation="horizontal"]': {
-          marginRight: theme.spacing[4],
+          marginInlineEnd: theme.spacing[4],
         },
       },
       horizontal: {},

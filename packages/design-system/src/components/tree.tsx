@@ -111,7 +111,7 @@ const DepthBars = styled("div", {
   visibility: `var(${treeDepthBarsVisibility}, hidden)`,
   position: "absolute",
   top: 0,
-  left: 0,
+  insetInlineStart: 0,
   width: `calc((var(${treeNodeLevel}) - 1) * ${BARS_GAP}px)`,
   height: "100%",
   backgroundImage: `repeating-linear-gradient(
@@ -132,8 +132,8 @@ const NodeButton = styled("button", {
   width: "100%",
   height: "inherit",
   minWidth: 0,
-  paddingLeft: `calc(${ITEM_PADDING_LEFT}px + var(${treeNodeLevel}) * 16px)`,
-  paddingRight: ITEM_PADDING_RIGHT,
+  paddingInlineStart: `calc(${ITEM_PADDING_LEFT}px + var(${treeNodeLevel}) * 16px)`,
+  paddingInlineEnd: ITEM_PADDING_RIGHT,
   flexBasis: 0,
   flexGrow: 1,
   position: "relative",
@@ -146,7 +146,7 @@ const ExpandButton = styled("button", {
   alignItems: "center",
   position: "absolute",
   top: 0,
-  left: `calc(var(${treeNodeLevel}) * ${BARS_GAP}px - ${EXPAND_WIDTH / 2}px)`,
+  insetInlineStart: `calc(var(${treeNodeLevel}) * ${BARS_GAP}px - ${EXPAND_WIDTH / 2}px)`,
   width: EXPAND_WIDTH,
   height: "inherit",
 });
@@ -157,7 +157,7 @@ const ActionContainer = styled("div", {
   opacity: `var(${treeActionOpacity}, 0)`,
   position: "sticky",
   translate: `-100% -100%`,
-  left: `calc(var(--sidebar-left-panel-width) - ${ITEM_PADDING_RIGHT}px)`,
+  insetInlineStart: `calc(var(--sidebar-left-panel-width) - ${ITEM_PADDING_RIGHT}px)`,
   height: "inherit",
   display: "inline-flex",
   justifyContent: "center",
@@ -512,7 +512,7 @@ export const TreeNodeLabel = ({
         variant="labels"
         truncate
         css={{
-          marginLeft: prefix ? theme.spacing[3] : 0,
+          marginInlineStart: prefix ? theme.spacing[3] : 0,
           flexBasis: 0,
           flexGrow: 1,
         }}

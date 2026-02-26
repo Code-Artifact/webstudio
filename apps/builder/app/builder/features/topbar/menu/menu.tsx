@@ -34,13 +34,14 @@ import { $openProjectSettings } from "~/shared/nano-states/project-settings";
 import { UpgradeIcon } from "@webstudio-is/icons";
 import { getSetting, setSetting } from "~/builder/shared/client-settings";
 import { help } from "~/shared/help";
+import { t } from "~/shared/i18n/t";
 
 const ViewMenuItem = () => {
   const navigatorLayout = getSetting("navigatorLayout");
 
   return (
     <DropdownMenuSub>
-      <DropdownMenuSubTrigger>View</DropdownMenuSubTrigger>
+      <DropdownMenuSubTrigger>{t.topbar.view}</DropdownMenuSubTrigger>
       <DropdownMenuSubContent width="regular">
         <DropdownMenuCheckboxItem
           checked={navigatorLayout === "undocked"}
@@ -50,7 +51,7 @@ const ViewMenuItem = () => {
             setSetting("navigatorLayout", setting);
           }}
         >
-          Undock navigator
+          {t.topbar.undockNavigator}
         </DropdownMenuCheckboxItem>
       </DropdownMenuSubContent>
     </DropdownMenuSub>
@@ -71,11 +72,11 @@ export const Menu = () => {
 
   const disabledPublishTooltipContent = isPublishEnabled
     ? undefined
-    : "Only owner or admin can publish projects";
+    : t.topbar.onlyOwnerCanPublish;
 
   const disabledShareTooltipContent = isShareEnabled
     ? undefined
-    : "Only owner can share projects";
+    : t.topbar.onlyOwnerCanShare;
 
   // If authToken is defined, the user is not logged into the current project and must be redirected to the dashboard to clone the project.
   const cloneIsExternal = authToken !== undefined;
@@ -89,7 +90,7 @@ export const Menu = () => {
             window.location.href = dashboardUrl({ origin: window.origin });
           }}
         >
-          Dashboard
+          {t.topbar.dashboard}
         </DropdownMenuItem>
         <Tooltip side="right" content={undefined}>
           <DropdownMenuItem
@@ -97,22 +98,22 @@ export const Menu = () => {
               $openProjectSettings.set("general");
             }}
           >
-            Project settings
+            {t.topbar.projectSettings}
           </DropdownMenuItem>
         </Tooltip>
         <DropdownMenuItem onSelect={() => emitCommand("openBreakpointsMenu")}>
-          Breakpoints
+          {t.topbar.breakpoints}
         </DropdownMenuItem>
         <ViewMenuItem />
         <DropdownMenuSeparator />
         <DropdownMenuItem onSelect={() => emitCommand("undo")}>
-          Undo
+          {t.topbar.undo}
           <DropdownMenuItemRightSlot>
             <Kbd value={["meta", "z"]} />
           </DropdownMenuItemRightSlot>
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={() => emitCommand("redo")}>
-          Redo
+          {t.topbar.redo}
           <DropdownMenuItemRightSlot>
             <Kbd value={["meta", "shift", "z"]} />
           </DropdownMenuItemRightSlot>
@@ -138,20 +139,20 @@ export const Menu = () => {
 
           */}
         <DropdownMenuItem onSelect={() => emitCommand("deleteInstanceBuilder")}>
-          Delete
+          {t.topbar.delete}
           <DropdownMenuItemRightSlot>
             <Kbd value={["backspace"]} />
           </DropdownMenuItemRightSlot>
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={() => emitCommand("save")}>
-          Save
+          {t.topbar.save}
           <DropdownMenuItemRightSlot>
             <Kbd value={["meta", "s"]} />
           </DropdownMenuItemRightSlot>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem onSelect={() => emitCommand("togglePreviewMode")}>
-          Preview
+          {t.topbar.preview}
           <DropdownMenuItemRightSlot>
             <Kbd value={["meta", "shift", "p"]} />
           </DropdownMenuItemRightSlot>
@@ -168,7 +169,7 @@ export const Menu = () => {
             }}
             disabled={isShareEnabled === false}
           >
-            Share
+            {t.topbar.share}
           </DropdownMenuItem>
         </Tooltip>
 
@@ -183,7 +184,7 @@ export const Menu = () => {
             }}
             disabled={isPublishEnabled === false}
           >
-            Publish
+            {t.topbar.publish}
             <DropdownMenuItemRightSlot>
               <Kbd value={["shift", "P"]} />
             </DropdownMenuItemRightSlot>
@@ -201,7 +202,7 @@ export const Menu = () => {
             }}
             disabled={isPublishEnabled === false}
           >
-            Export
+            {t.topbar.export}
             <DropdownMenuItemRightSlot>
               <Kbd value={["shift", "E"]} />
             </DropdownMenuItemRightSlot>
@@ -219,7 +220,7 @@ export const Menu = () => {
             }}
             disabled={isPublishEnabled === false}
           >
-            Deploy
+            {t.topbar.deploy}
             <DropdownMenuItemRightSlot>
               <Kbd value={["shift", "D"]} />
             </DropdownMenuItemRightSlot>
@@ -253,10 +254,10 @@ export const Menu = () => {
                   sourceAuthToken: authToken,
                 })}
               >
-                Clone
+                {t.topbar.clone}
               </a>
             ) : (
-              "Clone"
+              t.topbar.clone
             )}
           </DropdownMenuItem>
         </Tooltip>
@@ -265,7 +266,7 @@ export const Menu = () => {
 
         {isDesignMode && (
           <DropdownMenuItem onSelect={() => emitCommand("openCommandPanel")}>
-            Search & commands
+            {t.topbar.searchAndCommands}
             <DropdownMenuItemRightSlot>
               <Kbd value={["meta", "k"]} />
             </DropdownMenuItemRightSlot>
@@ -273,14 +274,14 @@ export const Menu = () => {
         )}
 
         <DropdownMenuItem onSelect={() => emitCommand("openKeyboardShortcuts")}>
-          Keyboard shortcuts
+          {t.topbar.keyboardShortcuts}
           <DropdownMenuItemRightSlot>
             <Kbd value={["shift", "?"]} />
           </DropdownMenuItemRightSlot>
         </DropdownMenuItem>
 
         <DropdownMenuSub>
-          <DropdownMenuSubTrigger>Help</DropdownMenuSubTrigger>
+          <DropdownMenuSubTrigger>{t.topbar.help}</DropdownMenuSubTrigger>
           <DropdownMenuSubContent width="regular">
             {help.map((item) => (
               <DropdownMenuItem
@@ -313,7 +314,7 @@ export const Menu = () => {
               css={{ gap: theme.spacing[3] }}
             >
               <UpgradeIcon />
-              <div>Upgrade to Pro</div>
+              <div>{t.topbar.upgradeToPro}</div>
             </DropdownMenuItem>
           </>
         )}

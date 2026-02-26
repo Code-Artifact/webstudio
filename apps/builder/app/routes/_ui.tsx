@@ -10,6 +10,7 @@ import {
 import interFont from "@fontsource-variable/inter/index.css?url";
 import manropeVariableFont from "@fontsource-variable/manrope/index.css?url";
 import robotoMonoFont from "@fontsource/roboto-mono/index.css?url";
+import vazirmatnFont from "@fontsource/vazirmatn/index.css?url";
 import appCss from "../shared/app.css?url";
 import {
   json,
@@ -28,6 +29,7 @@ export const links: LinksFunction = () => {
   // `links` returns an array of objects whose
   // properties map to the `<link />` component props
   return [
+    { rel: "stylesheet", href: vazirmatnFont },
     { rel: "stylesheet", href: interFont },
     { rel: "stylesheet", href: manropeVariableFont },
     { rel: "stylesheet", href: robotoMonoFont },
@@ -37,7 +39,7 @@ export const links: LinksFunction = () => {
 
 const Document = (props: { children: React.ReactNode }) => {
   return (
-    <html lang="en">
+    <html lang="fa" dir="rtl">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

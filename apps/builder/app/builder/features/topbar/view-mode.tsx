@@ -2,6 +2,7 @@ import { useStore } from "@nanostores/react";
 import { Flex, rawTheme, Tooltip, theme } from "@webstudio-is/design-system";
 import { CloudIcon } from "@webstudio-is/icons";
 import { $authPermit } from "~/shared/nano-states";
+import { t } from "~/shared/i18n/t";
 
 export const ViewMode = () => {
   const authPermit = useStore($authPermit);
@@ -11,7 +12,7 @@ export const ViewMode = () => {
   }
 
   return (
-    <Tooltip content={"View mode. Your changes will not be saved"}>
+    <Tooltip content={t.topbar.viewMode}>
       <Flex
         align="center"
         justify="center"
@@ -20,7 +21,7 @@ export const ViewMode = () => {
       >
         <CloudIcon
           color={rawTheme.colors.backgroundAlertMain}
-          aria-label="View mode. Your changes will not be saved"
+          aria-label={t.topbar.viewMode}
         />
       </Flex>
     </Tooltip>

@@ -12,6 +12,7 @@ import {
 import { ShareProjectContainer } from "~/shared/share-project";
 import { $authPermit } from "~/shared/nano-states";
 import { $isShareDialogOpen } from "~/builder/shared/nano-states";
+import { t } from "~/shared/i18n/t";
 
 export const ShareButton = ({ projectId }: { projectId: string }) => {
   const isShareDialogOpen = useStore($isShareDialogOpen);
@@ -19,7 +20,7 @@ export const ShareButton = ({ projectId }: { projectId: string }) => {
 
   const isShareDisabled = authPermit !== "own";
   const tooltipContent = isShareDisabled
-    ? "Only owner can share projects"
+    ? t.topbar.onlyOwnerCanShare
     : undefined;
 
   return (
@@ -31,12 +32,12 @@ export const ShareButton = ({ projectId }: { projectId: string }) => {
       }}
     >
       <Tooltip
-        content={tooltipContent ?? "Share a project link"}
+        content={tooltipContent ?? t.topbar.shareProjectLink}
         sideOffset={Number.parseFloat(rawTheme.spacing[5])}
       >
         <PopoverTrigger asChild>
           <Button disabled={isShareDisabled} color="gradient">
-            Share
+            {t.topbar.share}
           </Button>
         </PopoverTrigger>
       </Tooltip>
@@ -45,7 +46,7 @@ export const ShareButton = ({ projectId }: { projectId: string }) => {
         css={{ marginRight: theme.spacing[3] }}
       >
         <ShareProjectContainer projectId={projectId} />
-        <PopoverTitle>Share</PopoverTitle>
+        <PopoverTitle>{t.topbar.share}</PopoverTitle>
       </PopoverContent>
     </Popover>
   );

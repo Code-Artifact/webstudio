@@ -1,16 +1,13 @@
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import {
-  Button,
   Flex,
   globalCss,
   rawTheme,
   Text,
   theme,
 } from "@webstudio-is/design-system";
-import { GithubIcon, GoogleIcon, WebstudioIcon } from "@webstudio-is/icons";
-import { Form } from "@remix-run/react";
-import { authPath } from "~/shared/router-utils";
-import { SecretLogin } from "./secret-login";
+import { WebstudioIcon } from "@webstudio-is/icons";
+import { PasswordLogin } from "./password-login";
 
 const globalStyles = globalCss({
   body: {
@@ -21,16 +18,12 @@ const globalStyles = globalCss({
 
 export type LoginProps = {
   errorMessage?: string;
-  isGithubEnabled?: boolean;
-  isGoogleEnabled?: boolean;
-  isSecretLoginEnabled?: boolean;
+  isPasswordLoginEnabled?: boolean;
 };
 
 export const Login = ({
   errorMessage,
-  isGithubEnabled,
-  isGoogleEnabled,
-  isSecretLoginEnabled,
+  isPasswordLoginEnabled,
 }: LoginProps) => {
   globalStyles();
   return (
@@ -58,35 +51,12 @@ export const Login = ({
       >
         <WebstudioIcon size={48} />
         <Text variant="brandSectionTitle" as="h1" align="center">
-          Welcome to Webstudio
+          به وب‌استودیو خوش آمدید
         </Text>
 
         <TooltipProvider>
           <Flex direction="column" gap="3" css={{ width: "100%" }}>
-            <Form method="post" style={{ display: "contents" }}>
-              <Button
-                disabled={isGoogleEnabled === false}
-                prefix={<GoogleIcon size={22} />}
-                color="primary"
-                css={{ height: theme.spacing[15] }}
-                formAction={authPath({ provider: "google" })}
-              >
-                Sign in with Google
-              </Button>
-              <Button
-                disabled={isGithubEnabled === false}
-                prefix={<GithubIcon size={22} fill="currentColor" />}
-                color="ghost"
-                css={{
-                  border: `1px solid ${theme.colors.borderDark}`,
-                  height: theme.spacing[15],
-                }}
-                formAction={authPath({ provider: "github" })}
-              >
-                Sign in with GitHub
-              </Button>
-            </Form>
-            {isSecretLoginEnabled && <SecretLogin />}
+            {isPasswordLoginEnabled && <PasswordLogin />}
           </Flex>
         </TooltipProvider>
         {errorMessage ? (

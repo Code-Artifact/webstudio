@@ -8,6 +8,9 @@ services:
     environment:
       - SITES_DIR=/app/sites
       - DEPLOY_BASE_URL=https://example.com
+      - ADMIN_USERNAME=${ADMIN_USERNAME:-admin}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-}
+      - AUTH_SECRET=${AUTH_SECRET:-}
     networks:
       - website-builder-network
 

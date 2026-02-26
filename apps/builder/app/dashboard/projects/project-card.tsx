@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { t } from "~/shared/i18n/t";
 import {
   css,
   Flex,
@@ -187,18 +188,18 @@ export const ProjectCard = ({
               variant="wrapped"
               content={
                 <Text variant="small">
-                  Created: {formatDate(createdAt)}
+                  {t.dashboard.created} {formatDate(createdAt)}
                   {latestBuildVirtual?.updatedAt && (
                     <>
                       <br />
-                      Last modified: {formatDate(latestBuildVirtual.updatedAt)}
+                      {t.dashboard.lastModified} {formatDate(latestBuildVirtual.updatedAt)}
                     </>
                   )}
                   <br />
                   {isPublished && latestBuildVirtual ? (
-                    <>Published: {formatDate(latestBuildVirtual.createdAt)}</>
+                    <>{t.dashboard.published} {formatDate(latestBuildVirtual.createdAt)}</>
                   ) : (
-                    <>Not published</>
+                    <>{t.dashboard.notPublished}</>
                   )}
                 </Text>
               }
@@ -213,7 +214,7 @@ export const ProjectCard = ({
           {isPublished ? (
             <PublishedLink domain={displayDomain} tabIndex={-1} />
           ) : (
-            <Text color="subtle">Not published</Text>
+            <Text color="subtle">{t.dashboard.notPublished}</Text>
           )}
         </Flex>
         <ProjectMenu projectId={id} onOpenChange={setOpenDialog} />

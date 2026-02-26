@@ -118,16 +118,10 @@ export const userPlanSubscriptionPath = (subscriptionId?: string) => {
   return `/n8n/billing_portal/sessions?${urlSearchParams.toString()}`;
 };
 
-export const authCallbackPath = ({
-  provider,
-}: {
-  provider: "google" | "github";
-}) => `/auth/${provider}/callback`;
-
 export const authPath = ({
   provider,
 }: {
-  provider: "google" | "github" | "dev";
+  provider: "password";
 }) => `/auth/${provider}`;
 
 export const restAssetsPath = () => {

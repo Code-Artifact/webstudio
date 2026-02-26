@@ -60,7 +60,7 @@ const titleButtonStyle = css(titleButtonLayoutStyle, {
 
 const suffixSlotStyle = css({
   position: "absolute",
-  right: theme.spacing[4],
+  insetInlineEnd: theme.spacing[4],
   top: theme.spacing[4],
 });
 
@@ -89,7 +89,7 @@ const dotStyle = css({
   width: theme.spacing[4],
   height: theme.spacing[4],
   borderRadius: theme.borderRadius.round,
-  marginRight: -2,
+  marginInlineEnd: -2,
   variants: {
     color: {
       local: { backgroundColor: theme.colors.foregroundLocalFlexUi },

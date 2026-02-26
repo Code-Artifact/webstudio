@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import { t } from "~/shared/i18n/t";
 import { ChevronDownIcon, UpgradeIcon } from "@webstudio-is/icons";
 import {
   DropdownMenu,
@@ -35,7 +36,7 @@ const ProfileButton = forwardRef<
   return (
     <Button
       color="ghost"
-      aria-label="Profile Menu"
+      aria-label={t.dashboard.profileMenu}
       {...rest}
       ref={forwardedRef}
       prefix={
@@ -82,7 +83,7 @@ export const ProfileMenu = ({
         {subscriptions.length > 0 && (
           <>
             <DropdownMenuSeparator />
-            <DropdownMenuLabel>Purchases</DropdownMenuLabel>
+            <DropdownMenuLabel>{t.dashboard.purchases}</DropdownMenuLabel>
           </>
         )}
         {subscriptions.map((purchase) => (
@@ -103,12 +104,12 @@ export const ProfileMenu = ({
             css={{ gap: theme.spacing[3] }}
           >
             <UpgradeIcon />
-            <div>Upgrade</div>
+            <div>{t.dashboard.upgrade}</div>
           </DropdownMenuItem>
         )}
         <DropdownMenuSeparator />
         <DropdownMenuItem onSelect={() => navigate(logoutPath())}>
-          Sign Out
+          {t.auth.signOut}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

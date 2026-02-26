@@ -35,16 +35,16 @@ export const meta: MetaFunction<typeof loader> = () => {
   const metas: ReturnType<MetaFunction> = [
     {
       name: "title",
-      content: "Webstudio Login",
+      content: "ورود به وب‌استودیو",
     },
     {
       name: "description",
-      content: "Log in to Webstudio to start creating websites.",
+      content: "برای شروع ساخت وب‌سایت وارد وب‌استودیو شوید.",
     },
     { name: "robots", content: "index, follow" },
   ];
 
-  metas.push({ title: "Webstudio Login" });
+  metas.push({ title: "ورود به وب‌استودیو" });
 
   return metas;
 };
@@ -85,10 +85,8 @@ export const loader = async ({
 
   return json(
     {
-      isSecretLoginEnabled: env.DEV_LOGIN === "true",
-      isGithubEnabled: Boolean(env.GH_CLIENT_ID && env.GH_CLIENT_SECRET),
-      isGoogleEnabled: Boolean(
-        env.GOOGLE_CLIENT_ID && env.GOOGLE_CLIENT_SECRET
+      isPasswordLoginEnabled: Boolean(
+        env.ADMIN_USERNAME && env.ADMIN_PASSWORD
       ),
     },
     { headers }

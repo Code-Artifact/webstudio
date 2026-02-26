@@ -48,8 +48,10 @@ const { styled, css, getCssText, globalCss, keyframes, config, reset } =
       colors: figma.color,
       fonts: {
         ...figma.fontFamilies,
-        sans: figma.fontFamilies.inter,
+        sans: `Vazirmatn, ${figma.fontFamilies.inter}`,
         mono: figma.fontFamilies.robotoMono,
+        inter: `Vazirmatn, ${figma.fontFamilies.inter}`,
+        manrope: `Vazirmatn, ${figma.fontFamilies.manrope}`,
       },
 
       opacity: {
@@ -115,13 +117,13 @@ const { styled, css, getCssText, globalCss, keyframes, config, reset } =
         paddingTop: value,
       }),
       pr: (value: Stitches.PropertyValue<"paddingRight">) => ({
-        paddingRight: value,
+        paddingInlineEnd: value,
       }),
       pb: (value: Stitches.PropertyValue<"paddingBottom">) => ({
         paddingBottom: value,
       }),
       pl: (value: Stitches.PropertyValue<"paddingLeft">) => ({
-        paddingLeft: value,
+        paddingInlineStart: value,
       }),
       px: (value: Stitches.PropertyValue<"paddingLeft">) => ({
         paddingInline: value,
@@ -137,13 +139,13 @@ const { styled, css, getCssText, globalCss, keyframes, config, reset } =
         marginTop: value,
       }),
       mr: (value: Stitches.PropertyValue<"marginRight">) => ({
-        marginRight: value,
+        marginInlineEnd: value,
       }),
       mb: (value: Stitches.PropertyValue<"marginBottom">) => ({
         marginBottom: value,
       }),
       ml: (value: Stitches.PropertyValue<"marginLeft">) => ({
-        marginLeft: value,
+        marginInlineStart: value,
       }),
       mx: (value: Stitches.PropertyValue<"marginLeft">) => ({
         marginInline: value,

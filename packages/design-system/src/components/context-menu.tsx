@@ -85,7 +85,7 @@ export const ContextMenuItem = forwardRef<
 ContextMenuItem.displayName = "ContextMenuItem";
 
 export const ContextMenuItemRightSlot = styled("span", {
-  marginLeft: "auto",
+  marginInlineStart: "auto",
   display: "flex",
 });
 

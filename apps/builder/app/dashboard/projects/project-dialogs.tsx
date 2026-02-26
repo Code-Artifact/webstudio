@@ -1,4 +1,5 @@
 import { useRevalidator } from "@remix-run/react";
+import { t } from "~/shared/i18n/t";
 import { useEffect, useState, type JSX } from "react";
 import {
   Box,
@@ -124,7 +125,7 @@ const DialogContent = ({
       <DialogActions>
         {primaryButton}
         <DialogClose>
-          <Button color="ghost">Cancel</Button>
+          <Button color="ghost">{t.common.cancel}</Button>
         </DialogClose>
       </DialogActions>
     </form>
@@ -167,7 +168,7 @@ const useCreateProject = () => {
 };
 
 export const CreateProject = ({
-  buttonText = "New blank project",
+  buttonText = t.dashboard.newProject,
 }: {
   buttonText?: string;
 }) => {
@@ -175,21 +176,21 @@ export const CreateProject = ({
 
   return (
     <Dialog
-      title="New Project"
+      title={t.dashboard.newProject}
       trigger={<Button prefix={<PlusIcon size={12} />}>{buttonText}</Button>}
       onOpenChange={handleOpenChange}
     >
       <DialogContent
         onSubmit={handleSubmit}
-        placeholder="My Project"
-        label="Project Title"
+        placeholder={t.dashboard.myProject}
+        label={t.dashboard.projectTitle}
         errors={errors}
         primaryButton={
           <Button
             state={state === "idle" ? undefined : "pending"}
             type="submit"
           >
-            Create Project
+            {t.dashboard.createProject}
           </Button>
         }
       />
@@ -246,18 +247,18 @@ export const RenameProjectDialog = ({
     onOpenChange,
   });
   return (
-    <Dialog title="Rename" isOpen={isOpen} onOpenChange={onOpenChange}>
+    <Dialog title={t.dashboard.rename} isOpen={isOpen} onOpenChange={onOpenChange}>
       <DialogContent
         onSubmit={handleSubmit}
         errors={errors}
         title={title}
-        label="Project Title"
+        label={t.dashboard.projectTitle}
         primaryButton={
           <Button
             type="submit"
             state={state === "idle" ? undefined : "pending"}
           >
-            Rename Project
+            {t.dashboard.renameProject}
           </Button>
         }
       />
@@ -335,7 +336,7 @@ export const DeleteProjectDialog = ({
     });
   return (
     <Dialog
-      title="Delete Confirmation"
+      title={t.dashboard.deleteConfirmation}
       isOpen={isOpen}
       onOpenChange={onOpenChange}
     >
@@ -345,7 +346,7 @@ export const DeleteProjectDialog = ({
         errors={errors}
         label={
           <Label css={{ userSelect: "text" }}>
-            Confirm by typing
+            {t.dashboard.confirmByTyping}
             <Text
               as="span"
               color="destructive"
@@ -354,10 +355,9 @@ export const DeleteProjectDialog = ({
             >
               {` ${title} `}
             </Text>
-            below.
           </Label>
         }
-        description="This project and its styles, pages and images will be deleted permanently."
+        description={t.dashboard.deleteWarning}
         primaryButton={
           <Button
             type="submit"
@@ -365,7 +365,7 @@ export const DeleteProjectDialog = ({
             disabled={isMatch === false}
             state={state === "idle" ? undefined : "pending"}
           >
-            Delete Forever
+            {t.dashboard.deleteForever}
           </Button>
         }
         width={theme.spacing["33"]}
@@ -395,7 +395,7 @@ export const ShareProjectDialog = ({
   projectId: string;
 }) => {
   return (
-    <Dialog title="Share Project" isOpen={isOpen} onOpenChange={onOpenChange}>
+    <Dialog title={t.dashboard.shareProject} isOpen={isOpen} onOpenChange={onOpenChange}>
       <ShareProjectContainer projectId={projectId} />
     </Dialog>
   );

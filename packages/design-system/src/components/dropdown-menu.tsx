@@ -102,7 +102,7 @@ export const DropdownMenuItem = forwardRef<
 DropdownMenuItem.displayName = "DropdownMenuItem";
 
 export const DropdownMenuItemRightSlot = styled("span", {
-  marginLeft: "auto",
+  marginInlineStart: "auto",
   display: "flex",
 });
 

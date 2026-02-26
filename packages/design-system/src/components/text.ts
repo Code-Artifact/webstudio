@@ -40,9 +40,9 @@ export const textStyle = css({
       },
     },
     align: {
-      left: { textAlign: "left" },
+      left: { textAlign: "start" },
       center: { textAlign: "center" },
-      right: { textAlign: "right" },
+      right: { textAlign: "end" },
     },
     truncate: {
       true: {

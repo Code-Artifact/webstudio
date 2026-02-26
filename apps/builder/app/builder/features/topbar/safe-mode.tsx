@@ -12,6 +12,7 @@ import {
   rawTheme,
 } from "@webstudio-is/design-system";
 import { builderApi } from "~/shared/builder-api";
+import { t } from "~/shared/i18n/t";
 
 export const SafeModeButton = () => {
   const [open, setOpen] = useState(false);
@@ -42,14 +43,12 @@ export const SafeModeButton = () => {
             width: theme.spacing[30],
           }}
         >
-          <Text variant="regularBold">Safe mode active</Text>
+          <Text variant="regularBold">{t.topbar.safeModeActive}</Text>
           <Text>
-            Safe mode prevents all external JavaScript from executing. HTML
-            embeds will not run scripts even if "Run scripts on canvas" is
-            enabled.
+            {t.topbar.safeModeDescription}
           </Text>
           <Button color="destructive" onClick={handleExitSafeMode}>
-            Exit safe mode
+            {t.topbar.exitSafeMode}
           </Button>
         </Flex>
       </PopoverContent>

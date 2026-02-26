@@ -23,8 +23,8 @@ const style = css({
   whiteSpace: "pre", // to make nestedSelectButtonUnitless work as expected
   height: theme.spacing[10],
   "&:not(:has(svg))": {
-    paddingLeft: theme.spacing[2],
-    paddingRight: theme.spacing[2],
+    paddingInlineStart: theme.spacing[2],
+    paddingInlineEnd: theme.spacing[2],
   },
   "&[data-state=hover], &:not([data-state=open], :disabled, :focus-visible):hover":
     {

@@ -58,8 +58,8 @@ const gridStyle = css({
 
 const commonStyle = css({
   border: "none",
-  paddingRight: theme.spacing[4],
-  paddingLeft: theme.spacing[3],
+  paddingInlineEnd: theme.spacing[4],
+  paddingInlineStart: theme.spacing[3],
   paddingTop: 0,
   paddingBottom: 0,
   boxSizing: "border-box",

@@ -1,4 +1,5 @@
 import { SearchField } from "@webstudio-is/design-system";
+import { t } from "~/shared/i18n/t";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { dashboardPath } from "~/shared/router-utils";
 
@@ -41,7 +42,7 @@ export const Search = () => {
       }}
       onAbort={handleAbortSearch}
       autoFocus
-      placeholder="Search for anything"
+      placeholder={t.dashboard.searchPlaceholder}
     />
   );
 };

@@ -24,13 +24,13 @@ const Container = styled("div", {
   justifyContent: "space-between",
   height: theme.spacing[15],
   paddingInline: theme.panel.paddingInline,
-  paddingRight: theme.spacing[5],
+  paddingInlineEnd: theme.spacing[5],
 });
 
 const SuffixSlot = styled("div", {
   display: "flex",
   alignItems: "center",
-  marginLeft: theme.spacing[5],
+  marginInlineStart: theme.spacing[5],
 });
 
 // we can't just set a gap on SuffixSlot,

@@ -38,8 +38,8 @@ const inputStyle = css({
   flexShrink: 1,
   minWidth: 0,
   height: "100%",
-  paddingRight: theme.spacing[2],
-  paddingLeft: theme.spacing[3],
+  paddingInlineEnd: theme.spacing[2],
+  paddingInlineStart: theme.spacing[3],
   "&[data-color=placeholder]:not(:hover, :disabled, [aria-disabled=true], :focus), &::placeholder":
     {
       color: theme.colors.foregroundSubtle,
@@ -125,11 +125,11 @@ const containerStyle = css({
 });
 
 const suffixSlotStyle = css({
-  marginRight: theme.spacing[1],
+  marginInlineEnd: theme.spacing[1],
 });
 
 const prefixSlotStyle = css({
-  marginLeft: theme.spacing[1],
+  marginInlineStart: theme.spacing[1],
 });
 
 const Container = forwardRef(

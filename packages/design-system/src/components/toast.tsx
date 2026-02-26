@@ -36,7 +36,7 @@ const swipeOut = keyframes({
 const StyledViewport = styled(ToastPrimitive.Viewport, {
   position: "absolute",
   top: 0,
-  right: 0,
+  insetInlineEnd: 0,
   display: "flex",
   flexDirection: "column",
   padding: theme.spacing[5],
@@ -148,7 +148,7 @@ const InternalToast = ({
             borderBottomRightRadius: theme.borderRadius[5],
             borderTopRightRadius: theme.borderRadius[5],
             border: `1px solid ${cssVar(borderColor)}`,
-            borderLeft: "none",
+            borderInlineStart: "none",
           }}
         >
           <Box

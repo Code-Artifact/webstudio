@@ -10,6 +10,7 @@ import {
 import { OfflineIcon } from "@webstudio-is/icons";
 import { useEffect } from "react";
 import { $queueStatus } from "~/shared/sync/project-queue";
+import { t } from "~/shared/i18n/t";
 
 const $isOnline = atom(false);
 
@@ -51,15 +52,11 @@ export const SyncStatus = () => {
           <Text>
             {isOnline ? (
               <>
-                Experiencing connectivity issues. Your changes will be synced
-                with Webstudio once resolved.
+                {t.topbar.connectivityIssues}
               </>
             ) : (
               <>
-                Offline changes will be synced with Webstudio once you go
-                online.
-                <br />
-                Please check your internet connection.
+                {t.topbar.offlineChanges}
               </>
             )}
           </Text>
@@ -67,7 +64,7 @@ export const SyncStatus = () => {
       >
         <Flex {...containerProps}>
           <OfflineIcon
-            aria-label={`Sync status: failed`}
+            aria-label={t.topbar.syncFailed}
             color={rawTheme.colors.foregroundDestructive}
           />
         </Flex>
@@ -80,7 +77,7 @@ export const SyncStatus = () => {
       <Flex {...containerProps}>
         <Tooltip variant="wrapped" content={<>{statusObject.error}</>}>
           <OfflineIcon
-            aria-label={`Sync status: fatal`}
+            aria-label={t.topbar.syncFatal}
             color={rawTheme.colors.foregroundDestructive}
           />
         </Tooltip>

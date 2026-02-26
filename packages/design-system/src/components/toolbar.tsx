@@ -77,7 +77,7 @@ const toggleItemStyle = css(textVariants.labels, {
         "&:hover, &:focus-visible, &[aria-expanded=true]": {
           color: theme.colors.foregroundContrastMain,
         },
-        "&:focus-visible": focusRingStyle({ left: 0, right: 0 }),
+        "&:focus-visible": focusRingStyle({ insetInlineStart: 0, insetInlineEnd: 0 }),
       },
     },
   },

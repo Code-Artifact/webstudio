@@ -25,6 +25,7 @@ import { Projects } from "./projects/projects";
 import { Templates } from "./templates/templates";
 import { Header } from "./shared/layout";
 import { help } from "~/shared/help";
+import { t } from "~/shared/i18n/t";
 import { SearchResults } from "./search/search-results";
 import type { DashboardData } from "./shared/types";
 import { Search } from "./search/search-field";
@@ -177,7 +178,7 @@ export const Dashboard = () => {
           shrink={false}
           css={{
             width: theme.sizes.sidebarWidth,
-            borderRight: `1px solid ${theme.colors.borderMain}`,
+            borderInlineEnd: `1px solid ${theme.colors.borderMain}`,
             position: "sticky",
             top: 0,
           }}
@@ -196,7 +197,7 @@ export const Dashboard = () => {
             <Search />
           </Flex>
           <nav>
-            <CollapsibleSection label="Workspace" fullWidth>
+            <CollapsibleSection label={t.dashboard.workspace} fullWidth>
               <NavigationItems
                 items={
                   view === "welcome" || hasProjects === false
@@ -204,25 +205,25 @@ export const Dashboard = () => {
                         {
                           to: dashboardPath(),
                           prefix: <ExtensionIcon />,
-                          children: "Welcome",
+                          children: t.dashboard.welcome,
                         },
                       ]
                     : [
                         {
                           to: dashboardPath("projects"),
                           prefix: <BodyIcon />,
-                          children: "Projects",
+                          children: t.dashboard.projects,
                         },
                         {
                           to: dashboardPath("templates"),
                           prefix: <ExtensionIcon />,
-                          children: "Starter templates",
+                          children: t.dashboard.starterTemplates,
                         },
                       ]
                 }
               />
             </CollapsibleSection>
-            <CollapsibleSection label="Help & support" fullWidth>
+            <CollapsibleSection label={t.dashboard.helpAndSupport} fullWidth>
               <NavigationItems
                 items={help.map((item) => ({
                   to: item.url,

@@ -29,8 +29,8 @@ const style = css({
   background: theme.colors.backgroundControls,
   border: `1px solid transparent`,
   borderRadius: theme.borderRadius[4],
-  paddingRight: theme.spacing[1],
-  paddingLeft: theme.spacing[1],
+  paddingInlineEnd: theme.spacing[1],
+  paddingInlineStart: theme.spacing[1],
   color: theme.colors.foregroundMain,
   [chevronColor]: theme.colors.foregroundSubtle,
   "&:hover": {
@@ -60,8 +60,8 @@ const textStyle = css(textVariants.regular, {
   textOverflow: "ellipsis",
   whiteSpace: "nowrap",
   flex: 1,
-  paddingRight: theme.spacing[2],
-  paddingLeft: theme.spacing[3],
+  paddingInlineEnd: theme.spacing[2],
+  paddingInlineStart: theme.spacing[3],
 });
 
 type Props = Omit<ComponentProps<"button">, "prefix"> & {

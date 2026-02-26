@@ -31,19 +31,19 @@ const ThumbHolder = styled("div", {
 /**
  * We draw button above rela button positions, therefore we need to have same padding
  */
-const sharedPaddingRight = theme.spacing[7];
+const sharedPaddingInlineEnd = theme.spacing[7];
 
 const IconButtonsWrapper = styled(Flex, {
   position: "absolute",
-  right: 0,
+  insetInlineEnd: 0,
   top: 0,
   bottom: 0,
-  paddingRight: sharedPaddingRight,
+  paddingInlineEnd: sharedPaddingInlineEnd,
   display: "none",
 });
 
 const FakeIconButtonsWrapper = styled(Flex, {
-  paddingLeft: theme.spacing[5],
+  paddingInlineStart: theme.spacing[5],
   display: "none",
 });
 
@@ -61,7 +61,7 @@ const ItemButton = styled("button", {
   backgroundColor: "inherit",
   padding: 0,
 
-  paddingRight: sharedPaddingRight,
+  paddingInlineEnd: sharedPaddingInlineEnd,
 
   height: theme.spacing[11],
   position: "relative",

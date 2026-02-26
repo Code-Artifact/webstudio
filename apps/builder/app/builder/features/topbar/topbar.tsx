@@ -24,6 +24,7 @@ import { ViewMode } from "./view-mode";
 import { AddressBarPopover } from "../address-bar";
 import { toggleActiveSidebarPanel } from "~/builder/shared/nano-states";
 import type { ReactNode } from "react";
+import { t } from "~/shared/i18n/t";
 import { CloneButton } from "./clone";
 import { DeployButton } from "./deploy/deploy-button";
 import { $selectedPage } from "~/shared/awareness";
@@ -40,14 +41,14 @@ const PagesButton = () => {
     <Tooltip
       content={
         <Text>
-          {"Pages or page settings "}
+          {t.topbar.pagesOrSettings + " "}
           <Kbd value={["alt", "click"]} color="moreSubtle" />
         </Text>
       }
     >
       <ToolbarButton
         css={{ paddingInline: theme.panel.paddingInline }}
-        aria-label="Toggle Pages"
+        aria-label={t.topbar.togglePages}
         onClick={(event) => {
           $editingPageId.set(event.altKey ? page.id : undefined);
           toggleActiveSidebarPanel("pages");

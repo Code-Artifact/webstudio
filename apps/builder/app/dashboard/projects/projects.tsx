@@ -9,6 +9,7 @@ import {
   ToggleGroup,
   ToggleGroupButton,
 } from "@webstudio-is/design-system";
+import { t } from "~/shared/i18n/t";
 import { RepeatGridIcon, ListViewIcon } from "@webstudio-is/icons";
 import type { DashboardProject } from "@webstudio-is/dashboard";
 import { ProjectCard } from "./project-card";
@@ -122,7 +123,7 @@ export const Projects = (props: ProjectsProps) => {
     <Main>
       <Header variant="main">
         <Text variant="brandSectionTitle" as="h2">
-          Projects
+          {t.dashboard.projects}
         </Text>
         <Flex gap="2">
           <ToggleGroup
@@ -130,10 +131,10 @@ export const Projects = (props: ProjectsProps) => {
             value={viewMode}
             onValueChange={handleViewChange}
           >
-            <ToggleGroupButton value="grid" aria-label="Grid view">
+            <ToggleGroupButton value="grid" aria-label={t.dashboard.gridView}>
               <RepeatGridIcon />
             </ToggleGroupButton>
-            <ToggleGroupButton value="list" aria-label="List view">
+            <ToggleGroupButton value="list" aria-label={t.dashboard.listView}>
               <ListViewIcon />
             </ToggleGroupButton>
           </ToggleGroup>
@@ -176,7 +177,7 @@ export const Projects = (props: ProjectsProps) => {
               flexGrow: 1,
             }}
           >
-            No projects found
+            {t.dashboard.noProjectsFound}
           </Text>
         ) : viewMode === "grid" ? (
           <ProjectsGrid {...props} projects={projects} />

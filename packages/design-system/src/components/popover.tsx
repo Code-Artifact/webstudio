@@ -108,7 +108,7 @@ export const PopoverClose = forwardRef(
 PopoverClose.displayName = "PopoverClose";
 
 export const PopoverMenuItemRightSlot = styled("span", {
-  marginLeft: "auto",
+  marginInlineStart: "auto",
   display: "flex",
 });
 

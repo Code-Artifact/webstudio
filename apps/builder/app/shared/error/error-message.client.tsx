@@ -8,6 +8,7 @@ import {
   buttonStyle,
 } from "@webstudio-is/design-system";
 import { WebstudioIcon } from "@webstudio-is/icons";
+import { t } from "~/shared/i18n/t";
 
 const pageStyle = css({
   position: "fixed",
@@ -32,7 +33,7 @@ export const ErrorMessage = ({
 }) => {
   return (
     <Grid className={pageStyle()} justify={"center"} gap={6}>
-      <AccessibleIcon label="Logo">
+      <AccessibleIcon label={t.errors.logo}>
         <WebstudioIcon size="60" />
       </AccessibleIcon>
       <div />
@@ -95,7 +96,7 @@ export const ErrorMessage = ({
           color="contrast"
           underline="none"
         >
-          Go Home
+          {t.errors.goHome}
         </Link>
       </Grid>
     </Grid>
