@@ -211,6 +211,24 @@ export const Menu = () => {
         <Tooltip
           side="right"
           sideOffset={10}
+          content={disabledPublishTooltipContent}
+        >
+          <DropdownMenuItem
+            onSelect={() => {
+              $publishDialog.set("deploy");
+            }}
+            disabled={isPublishEnabled === false}
+          >
+            Deploy
+            <DropdownMenuItemRightSlot>
+              <Kbd value={["shift", "D"]} />
+            </DropdownMenuItemRightSlot>
+          </DropdownMenuItem>
+        </Tooltip>
+
+        <Tooltip
+          side="right"
+          sideOffset={10}
           content={
             authTokenPermission.canClone === false
               ? "Cloning has been disabled by the project owner"

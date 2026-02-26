@@ -1,0 +1,21 @@
+services:
+  webstudio-builder:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - sites-data:/app/sites
+    environment:
+      - SITES_DIR=/app/sites
+      - DEPLOY_BASE_URL=https://example.com
+
+  nginx-static:
+    image: nginx:alpine
+    expose:
+      - "80"
+    volumes:
+      - sites-data:/usr/share/nginx/html:ro
+      - ./nginx/static.conf:/etc/nginx/conf.d/default.conf:ro
+
+volumes:
+  sites-data:

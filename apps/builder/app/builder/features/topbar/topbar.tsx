@@ -25,6 +25,7 @@ import { AddressBarPopover } from "../address-bar";
 import { toggleActiveSidebarPanel } from "~/builder/shared/nano-states";
 import type { ReactNode } from "react";
 import { CloneButton } from "./clone";
+import { DeployButton } from "./deploy/deploy-button";
 import { $selectedPage } from "~/shared/awareness";
 import { BuilderModeDropDown } from "./builder-mode";
 import { SafeModeButton } from "./safe-mode";
@@ -113,6 +114,7 @@ export const Topbar = ({ project, css, loading }: TopbarProps) => {
 
           <BuilderModeDropDown />
           <ShareButton projectId={project.id} />
+          <DeployButton />
           <PublishButton projectId={project.id} />
           <CloneButton />
         </ToolbarToggleGroup>

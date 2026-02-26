@@ -168,6 +168,16 @@ export const { emitCommand, subscribeCommands } = createCommandsEmitter({
       disableOnInputLikeControls: true,
     },
     {
+      name: "openDeployDialog",
+      description: "Deploy to static hosting",
+      category: "General",
+      defaultHotkeys: ["shift+D"],
+      handler: () => {
+        $publishDialog.set("deploy");
+      },
+      disableOnInputLikeControls: true,
+    },
+    {
       name: "toggleComponentsPanel",
       description: "Toggle components panel",
       category: "Panels",

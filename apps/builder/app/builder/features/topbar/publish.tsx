@@ -85,6 +85,7 @@ import { CopyToClipboard } from "~/shared/copy-to-clipboard";
 import { $openProjectSettings } from "~/shared/nano-states/project-settings";
 import { RelativeTime } from "~/builder/shared/relative-time";
 import cmsUpgradeBanner from "~/shared/cms-upgrade-banner.svg?url";
+import { DeployDialogContent } from "./deploy/deploy-dialog";
 
 type ChangeProjectDomainProps = {
   project: Project;
@@ -1241,6 +1242,13 @@ export const PublishButton = ({ projectId }: PublishProps) => {
           <>
             <PopoverTitle>Export</PopoverTitle>
             <ExportContent projectId={projectId} />
+          </>
+        )}
+
+        {publishDialog === "deploy" && (
+          <>
+            <PopoverTitle>Deploy</PopoverTitle>
+            <DeployDialogContent />
           </>
         )}
 

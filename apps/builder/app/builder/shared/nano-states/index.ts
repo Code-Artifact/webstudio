@@ -9,7 +9,9 @@ import type { SidebarPanelName } from "~/builder/sidebar-left/types";
 
 export const $isShareDialogOpen = atom<boolean>(false);
 
-export const $publishDialog = atom<"none" | "publish" | "export">("none");
+export const $publishDialog = atom<
+  "none" | "publish" | "export" | "deploy"
+>("none");
 
 export const $canvasWidth = atom<number | undefined>();
 
