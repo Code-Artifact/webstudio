@@ -2,29 +2,24 @@ FROM node:22-alpine AS base
 RUN corepack enable && corepack prepare pnpm@9.14.4 --activate
 WORKDIR /app
 
-# Install dependencies
+# Install all dependencies (dev + prod)
 FROM base AS dependencies
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-COPY patches ./patches
-COPY apps/builder/package.json apps/builder/
-COPY packages/ packages/
+COPY . .
 RUN pnpm install --frozen-lockfile
 
-# Build the application
+# Build everything (workspace packages + builder)
 FROM dependencies AS build
-COPY . .
 RUN pnpm build
 
 # Production runtime
 FROM base AS runtime
 RUN apk add --no-cache unzip
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-COPY patches ./patches
-COPY apps/builder/package.json apps/builder/
-COPY packages/ packages/
+
+# Copy everything from build stage (includes built lib/ dirs and build/ output)
+COPY --from=build /app /app
+
+# Prune dev dependencies
 RUN pnpm install --frozen-lockfile --prod
-COPY --from=build /app/apps/builder/build apps/builder/build
-COPY --from=build /app/apps/builder/public apps/builder/public
 
 # Create sites directory for deploy feature
 RUN mkdir -p /app/sites
