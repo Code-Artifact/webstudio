@@ -160,6 +160,9 @@ importers:
       '@fontsource/roboto-mono':
         specifier: ^5.0.18
         version: 5.0.18
+      '@fontsource/vazirmatn':
+        specifier: ^5.0.0
+        version: 5.2.8
       '@lexical/headless':
         specifier: ^0.21.0
         version: 0.21.0
@@ -391,15 +394,6 @@ importers:
       remix-auth-form:
         specifier: ^1.5.0
         version: 1.5.0(@remix-run/server-runtime@2.16.5(typescript@5.8.2))(remix-auth@3.7.0(@remix-run/react@2.16.5(react-dom@18.3.0-canary-14898b6a9-20240318(react@18.3.0-canary-14898b6a9-20240318))(react@18.3.0-canary-14898b6a9-20240318)(typescript@5.8.2))(@remix-run/server-runtime@2.16.5(typescript@5.8.2)))
-      remix-auth-github:
-        specifier: ^1.7.0
-        version: 1.7.0(@remix-run/server-runtime@2.16.5(typescript@5.8.2))(remix-auth@3.7.0(@remix-run/react@2.16.5(react-dom@18.3.0-canary-14898b6a9-20240318(react@18.3.0-canary-14898b6a9-20240318))(react@18.3.0-canary-14898b6a9-20240318)(typescript@5.8.2))(@remix-run/server-runtime@2.16.5(typescript@5.8.2)))
-      remix-auth-google:
-        specifier: ^2.0.0
-        version: 2.0.0(@remix-run/server-runtime@2.16.5(typescript@5.8.2))(remix-auth@3.7.0(@remix-run/react@2.16.5(react-dom@18.3.0-canary-14898b6a9-20240318(react@18.3.0-canary-14898b6a9-20240318))(react@18.3.0-canary-14898b6a9-20240318)(typescript@5.8.2))(@remix-run/server-runtime@2.16.5(typescript@5.8.2)))
-      remix-auth-oauth2:
-        specifier: ^2.3.0
-        version: 2.3.0(@remix-run/cloudflare@2.16.5(@cloudflare/workers-types@4.20240701.0)(typescript@5.8.2))(@remix-run/node@2.16.5(typescript@5.8.2))(remix-auth@3.7.0(@remix-run/react@2.16.5(react-dom@18.3.0-canary-14898b6a9-20240318(react@18.3.0-canary-14898b6a9-20240318))(react@18.3.0-canary-14898b6a9-20240318)(typescript@5.8.2))(@remix-run/server-runtime@2.16.5(typescript@5.8.2)))
       shallow-equal:
         specifier: ^3.1.0
         version: 3.1.0
@@ -3574,6 +3568,9 @@ packages:
   '@fontsource/roboto-mono@5.0.18':
     resolution: {integrity: sha512-hKuwk/cy3i6fWPzazT5xjgWq4YNqZWDHVbJh2Wwj3KYvWGi2v3ToBw/4LKQ+ggEkPLcIG6VU8GpCT3Xtf+mbbA==}
 
+  '@fontsource/vazirmatn@5.2.8':
+    resolution: {integrity: sha512-WoDgv8R/y1gwgTS8Q2uL8d2ayeSGNv2IrYQ4wHmJkVwYPb8KVODrqbbvEjBqLOo5WP5kLJIrO06FRDMnSFuCaA==}
+
   '@hattip/adapter-node@0.0.49':
     resolution: {integrity: sha512-BE+Y8Q4U0YcH34FZUYU4DssGKOaZLbNL0zK57Z41UZp0m9kS79ZIolBmjjpPhTVpIlRY3Rs+uhXbVXKk7mUcJA==}
 
@@ -3980,21 +3977,6 @@ packages:
 
   '@open-draft/until@2.1.0':
     resolution: {integrity: sha512-U69T3ItWHvLwGg5eJ0n3I62nWuE6ilHlmz7zM0npLBRvPRd7e6NYmg54vvRtP5mZG7kZqZCFVdsTWo7BPtBujg==}
-
-  '@oslojs/asn1@0.2.3':
-    resolution: {integrity: sha512-cZOLRzKfv3JTxIzNTAoiN0+utB0is9cQOOp5Xq++SE8MtIXXDLFblZGFrHCdTXLGXvUZmopeB/dFZrkh5MpKqQ==}
-
-  '@oslojs/binary@0.4.0':
-    resolution: {integrity: sha512-xi1MOhP7t9TFV1nOmzG0qIdCXdFXbeMYskhfI5eakBlU8re/xO+qjdyiBO+hl+nK4z4lZWCDjlgH8BXUWQDWFw==}
-
-  '@oslojs/crypto@0.6.2':
-    resolution: {integrity: sha512-2y39MOLkkCvaBdi2TrBDtk7106fayDHRLz11K1/UvtW28VgL5/TbV/tPRTmSA5dhvQQqLYDJj3zsBkjeP+aD2w==}
-
-  '@oslojs/encoding@0.4.1':
-    resolution: {integrity: sha512-hkjo6MuIK/kQR5CrGNdAPZhS01ZCXuWDRJ187zh6qqF2+yMHZpD9fAYpX8q2bOO6Ryhl3XpCT6kUX76N8hhm4Q==}
-
-  '@oslojs/oauth2@0.5.0':
-    resolution: {integrity: sha512-t70+e4EgnzTbU4MrUWXzqWN2A6RJrlSSvwwuBv6E0Ap6/nsIXrjsdRWeTcSvvXTcC6fi0YdWaqEWLipcEm2Cgw==}
 
   '@parcel/watcher-android-arm64@2.5.0':
     resolution: {integrity: sha512-qlX4eS28bUcQCdribHkg/herLe+0A9RyYC+mm2PXpncit8z5b3nSqGVzMNR3CmtAOgRutiZ02eIJJgP/b1iEFQ==}
@@ -8452,40 +8434,6 @@ packages:
       '@remix-run/server-runtime': ^1.0.0 || ^2.0.0
       remix-auth: ^3.6.0
 
-  remix-auth-github@1.7.0:
-    resolution: {integrity: sha512-xuy/DW44y/eWU+vUsf9NlQUtLhayMZEJszgaVr1txwjA0OzpPee5qNxPQ9RBg8WdnY3pMWck5m070MW5Jt7nxg==}
-    peerDependencies:
-      '@remix-run/server-runtime': ^1.0.0 || ^2.0.0
-      remix-auth: ^3.4.0
-
-  remix-auth-google@2.0.0:
-    resolution: {integrity: sha512-qP38N1ZJADz+HlH2lrEn/rSL6m5Dwcnz8xUFDhbHecDMl9FU/UpkUx3w8jj5XhNSnkSue/GWT+p7OEkatgbXNA==}
-    peerDependencies:
-      '@remix-run/server-runtime': ^2.0.1
-      remix-auth: ^3.2.1
-
-  remix-auth-oauth2@1.11.2:
-    resolution: {integrity: sha512-5ORP+LMi5CVCA/Wb8Z+FCAJ73Uiy4uyjEzhlVwNBfdAkPOnfxzoi+q/pY/CrueYv3OniCXRM35ZYqkVi3G1UPw==}
-    peerDependencies:
-      '@remix-run/server-runtime': ^1.0.0 || ^2.0.0
-      remix-auth: ^3.6.0
-
-  remix-auth-oauth2@2.3.0:
-    resolution: {integrity: sha512-94PztjpER9hethzZOpF1lqwlmLccGY7RUKp9ua3Ii3DBPqVIO/hFedeqpcvZyysbPaW3sK3ztqfe8b8nnF4F/Q==}
-    engines: {node: ^18.0.0 || ^20.0.0 || >=20.0.0}
-    peerDependencies:
-      '@remix-run/cloudflare': ^1.0.0 || ^2.0.0
-      '@remix-run/deno': ^1.0.0 || ^2.0.0
-      '@remix-run/node': ^1.0.0 || ^2.0.0
-      remix-auth: ^3.6.0
-    peerDependenciesMeta:
-      '@remix-run/cloudflare':
-        optional: true
-      '@remix-run/deno':
-        optional: true
-      '@remix-run/node':
-        optional: true
-
   remix-auth@3.7.0:
     resolution: {integrity: sha512-2QVjp2nJVaYxuFBecMQwzixCO7CLSssttLBU5eVlNcNlVeNMmY1g7OkmZ1Ogw9sBcoMXZ18J7xXSK0AISVFcfQ==}
     peerDependencies:
@@ -10705,6 +10653,8 @@ snapshots:
 
   '@fontsource/roboto-mono@5.0.18': {}
 
+  '@fontsource/vazirmatn@5.2.8': {}
+
   '@hattip/adapter-node@0.0.49':
     dependencies:
       '@hattip/core': 0.0.49
@@ -11226,21 +11176,6 @@ snapshots:
 
   '@open-draft/until@2.1.0':
     optional: true
-
-  '@oslojs/asn1@0.2.3':
-    dependencies:
-      '@oslojs/binary': 0.4.0
-
-  '@oslojs/binary@0.4.0': {}
-
-  '@oslojs/crypto@0.6.2':
-    dependencies:
-      '@oslojs/asn1': 0.2.3
-      '@oslojs/binary': 0.4.0
-
-  '@oslojs/encoding@0.4.1': {}
-
-  '@oslojs/oauth2@0.5.0': {}
 
   '@parcel/watcher-android-arm64@2.5.0':
     optional: true
@@ -16493,44 +16428,6 @@ snapshots:
     dependencies:
       '@remix-run/server-runtime': 2.16.5(typescript@5.8.2)
       remix-auth: 3.7.0(@remix-run/react@2.16.5(react-dom@18.3.0-canary-14898b6a9-20240318(react@18.3.0-canary-14898b6a9-20240318))(react@18.3.0-canary-14898b6a9-20240318)(typescript@5.8.2))(@remix-run/server-runtime@2.16.5(typescript@5.8.2))
-
-  remix-auth-github@1.7.0(@remix-run/server-runtime@2.16.5(typescript@5.8.2))(remix-auth@3.7.0(@remix-run/react@2.16.5(react-dom@18.3.0-canary-14898b6a9-20240318(react@18.3.0-canary-14898b6a9-20240318))(react@18.3.0-canary-14898b6a9-20240318)(typescript@5.8.2))(@remix-run/server-runtime@2.16.5(typescript@5.8.2))):
-    dependencies:
-      '@remix-run/server-runtime': 2.16.5(typescript@5.8.2)
-      remix-auth: 3.7.0(@remix-run/react@2.16.5(react-dom@18.3.0-canary-14898b6a9-20240318(react@18.3.0-canary-14898b6a9-20240318))(react@18.3.0-canary-14898b6a9-20240318)(typescript@5.8.2))(@remix-run/server-runtime@2.16.5(typescript@5.8.2))
-      remix-auth-oauth2: 1.11.2(@remix-run/server-runtime@2.16.5(typescript@5.8.2))(remix-auth@3.7.0(@remix-run/react@2.16.5(react-dom@18.3.0-canary-14898b6a9-20240318(react@18.3.0-canary-14898b6a9-20240318))(react@18.3.0-canary-14898b6a9-20240318)(typescript@5.8.2))(@remix-run/server-runtime@2.16.5(typescript@5.8.2)))
-    transitivePeerDependencies:
-      - supports-color
-
-  remix-auth-google@2.0.0(@remix-run/server-runtime@2.16.5(typescript@5.8.2))(remix-auth@3.7.0(@remix-run/react@2.16.5(react-dom@18.3.0-canary-14898b6a9-20240318(react@18.3.0-canary-14898b6a9-20240318))(react@18.3.0-canary-14898b6a9-20240318)(typescript@5.8.2))(@remix-run/server-runtime@2.16.5(typescript@5.8.2))):
-    dependencies:
-      '@remix-run/server-runtime': 2.16.5(typescript@5.8.2)
-      remix-auth: 3.7.0(@remix-run/react@2.16.5(react-dom@18.3.0-canary-14898b6a9-20240318(react@18.3.0-canary-14898b6a9-20240318))(react@18.3.0-canary-14898b6a9-20240318)(typescript@5.8.2))(@remix-run/server-runtime@2.16.5(typescript@5.8.2))
-      remix-auth-oauth2: 1.11.2(@remix-run/server-runtime@2.16.5(typescript@5.8.2))(remix-auth@3.7.0(@remix-run/react@2.16.5(react-dom@18.3.0-canary-14898b6a9-20240318(react@18.3.0-canary-14898b6a9-20240318))(react@18.3.0-canary-14898b6a9-20240318)(typescript@5.8.2))(@remix-run/server-runtime@2.16.5(typescript@5.8.2)))
-    transitivePeerDependencies:
-      - supports-color
-
-  remix-auth-oauth2@1.11.2(@remix-run/server-runtime@2.16.5(typescript@5.8.2))(remix-auth@3.7.0(@remix-run/react@2.16.5(react-dom@18.3.0-canary-14898b6a9-20240318(react@18.3.0-canary-14898b6a9-20240318))(react@18.3.0-canary-14898b6a9-20240318)(typescript@5.8.2))(@remix-run/server-runtime@2.16.5(typescript@5.8.2))):
-    dependencies:
-      '@remix-run/server-runtime': 2.16.5(typescript@5.8.2)
-      debug: 4.4.0
-      remix-auth: 3.7.0(@remix-run/react@2.16.5(react-dom@18.3.0-canary-14898b6a9-20240318(react@18.3.0-canary-14898b6a9-20240318))(react@18.3.0-canary-14898b6a9-20240318)(typescript@5.8.2))(@remix-run/server-runtime@2.16.5(typescript@5.8.2))
-      uuid: 9.0.1
-    transitivePeerDependencies:
-      - supports-color
-
-  remix-auth-oauth2@2.3.0(@remix-run/cloudflare@2.16.5(@cloudflare/workers-types@4.20240701.0)(typescript@5.8.2))(@remix-run/node@2.16.5(typescript@5.8.2))(remix-auth@3.7.0(@remix-run/react@2.16.5(react-dom@18.3.0-canary-14898b6a9-20240318(react@18.3.0-canary-14898b6a9-20240318))(react@18.3.0-canary-14898b6a9-20240318)(typescript@5.8.2))(@remix-run/server-runtime@2.16.5(typescript@5.8.2))):
-    dependencies:
-      '@oslojs/crypto': 0.6.2
-      '@oslojs/encoding': 0.4.1
-      '@oslojs/oauth2': 0.5.0
-      debug: 4.3.7
-      remix-auth: 3.7.0(@remix-run/react@2.16.5(react-dom@18.3.0-canary-14898b6a9-20240318(react@18.3.0-canary-14898b6a9-20240318))(react@18.3.0-canary-14898b6a9-20240318)(typescript@5.8.2))(@remix-run/server-runtime@2.16.5(typescript@5.8.2))
-    optionalDependencies:
-      '@remix-run/cloudflare': 2.16.5(@cloudflare/workers-types@4.20240701.0)(typescript@5.8.2)
-      '@remix-run/node': 2.16.5(typescript@5.8.2)
-    transitivePeerDependencies:
-      - supports-color
 
   remix-auth@3.7.0(@remix-run/react@2.16.5(react-dom@18.3.0-canary-14898b6a9-20240318(react@18.3.0-canary-14898b6a9-20240318))(react@18.3.0-canary-14898b6a9-20240318)(typescript@5.8.2))(@remix-run/server-runtime@2.16.5(typescript@5.8.2)):
     dependencies:
